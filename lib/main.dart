@@ -51,6 +51,17 @@ class _MyAppState extends State<MyApp> {
                     onChanged: (String value) {
                       input = value;
                     },),
+                    actions: <Widget> [
+                      ElevatedButton (
+                        onPressed: () {
+                            setState(() {
+                              todos.add(input);
+                            });
+                      },
+                      child: Text("add"),
+                      
+                      )
+                    ],
                  );
                }
                
