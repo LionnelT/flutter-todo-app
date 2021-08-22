@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
 
   // List<_MyAppState> todos = [];
   List todos = [];
+  String input = "";
 
   @override
   void initState() {
@@ -39,6 +40,22 @@ class _MyAppState extends State<MyApp> {
        appBar: AppBar(
          title: Text("My APP"),
          ),
+         floatingActionButton: FloatingActionButton(
+           onPressed: () {
+             showDialog(
+               context: context,
+               builder: (BuildContext context){
+                 return AlertDialog(
+                    title: Text("add todo"),
+                    content: TextField(
+                    onChanged: (String value) {
+                      input = value;
+                    },),
+                 );
+               }
+               
+               );
+           },),
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (BuildContext context, int index)  {
