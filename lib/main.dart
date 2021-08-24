@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                       )
                     ],
                  );
-               }
+                 }
                
                );
            },),
@@ -74,7 +74,11 @@ class _MyAppState extends State<MyApp> {
           key: Key(todos[index]),
           child: Card(
             child: ListTile(
-                title: Text(todos[index]),) ,
+                title: Text(todos[index]),
+                trailing: IconButton(icon: Icon(Icons.delete)
+                , onPressed: () {},
+                ),
+                ) ,
         ));
         
         }),
